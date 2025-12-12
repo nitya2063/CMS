@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage with Cards</title>
+
+    <style>
+        /* ---- NAVBAR ---- */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 25px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* ---- CARD LAYOUT ---- */
+        .container {
+            width: 90%;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .card h3 {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .card p {
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">My Website</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/createform">Add blog</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+
+    <!-- CARD SECTION -->
+    <div class="container">
+
+        <div class="card">
+            <h2>Card Title 1</h2>
+            <h3>Subtitle goes here</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Doloribus, magnam repellat! 
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Card Title 2</h2>
+            <h3>Subtitle example</h3>
+            <p>
+                This is a sample description for the second card. 
+                Clean and simple UI layout.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Card Title 3</h2>
+            <h3>Small subtitle</h3>
+            <p>
+                Cards are responsive and automatically adjust based on screen width.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Card Title 4</h2>
+            <h3>Another subtitle</h3>
+            <p>
+                You can add unlimited cards using the same pattern.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

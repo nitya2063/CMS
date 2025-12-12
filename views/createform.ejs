@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #333;
+            padding: 15px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+
+        /* CARD STYLING */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            width: 350px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* FORM DESIGN */
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        form button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="form.html">Form Page</a>
+        <a href="#">About</a>
+    </div>
+
+    <!-- CARD WITH FORM -->
+    <div class="card-container">
+        <div class="card">
+            <h2>Registration Form</h2>
+            <p>Fill the form below:</p>
+
+            <form action="/createform" method="post">
+                <input type="text" id="title" name="title" placeholder="Enter your name" required>
+                <input type="text" id="subtitle" name="subtitle" placeholder="Enter subtitle" required>
+                <textarea id="description" name="description" placeholder="Enter your message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>
