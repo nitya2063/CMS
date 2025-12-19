@@ -8,10 +8,13 @@ require("./model/index")
 
 app.use(express.json())//explicity use for form data
 app.use(express.urlencoded({extended:true}))
-app.get("/",(req,res)=>{
-    res.render("homepage")
+app.get("/",async(req,res)=>{
+    const allBlogs= await blogs.findAll()
+    console.log(allBlogs)
+    res.render("homepage",{blogs:allBlogs})
 })
-app.get("/createform",(req,res)=>{
+app.get("/createform",async(req,res)=>{
+    
     res.render("createform")
 })
 
