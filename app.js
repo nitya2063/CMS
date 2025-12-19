@@ -29,7 +29,7 @@ await blogs.create({
     description: description
 })
 
-    res.send("form submitted successfully")
+    res.redirect("/")
     
 }
     

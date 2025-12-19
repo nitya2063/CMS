@@ -85,7 +85,7 @@
 <div class="navbar">
     <div class="logo">My Website</div>
     <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/createform">Add blog</a></li>
         <li><a href="#">About</a></li>
     </ul>
@@ -93,18 +93,20 @@
 
 <!-- CARD SECTION -->
 <div class="container">
+    <% if (!blogs || blogs.length === 0) { %>
+        <h1>No blog</h1>
+    <% } else { %>
+        <% for (let i = 0; i < blogs.length; i++) { 
+            let blog = blogs[i]; %>
 
-    <% for (let i = 0; i < blogs.length; i++) { 
-        let blog = blogs[i]; %>
+            <div class="card">
+                <h2><%- blog.title %></h2>
+                <h3><%- blog.subTitle %></h3>
+                <p><%- blog.description %></p>
+            </div>
 
-        <div class="card">
-            <h2><%= blog.title %></h2>
-            <h3><%= blog.subTitle %></h3>
-            <p><%= blog.description %></p>
-        </div>
-
+        <% } %>
     <% } %>
-
 </div>
 
 </body>
