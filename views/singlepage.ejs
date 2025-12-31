@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage with Cards</title>
+    <title>title</title>
 
     <style>
         body {
@@ -49,33 +49,38 @@
             color: #ffcc00;
         }
 
-        .container {
-            width: 90%;
+        .content {
+            width: 80%;
             margin: 40px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .card h2 {
+        .content h1 {
             margin-top: 0;
         }
 
-        .card h3 {
-            margin: 5px 0;
-            color: #666;
+        .content h3 {
+            color: #777;
         }
 
-        .card p {
+        .content p {
+            line-height: 1.6;
             color: #444;
-            line-height: 1.5;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: #ff6600;
         }
     </style>
 </head>
@@ -87,28 +92,18 @@
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/createform">Add blog</a></li>
-        <li><a href="#">About</a></li>
     </ul>
 </div>
 
-<!-- CARD SECTION -->
-<div class="container">
-    <% if (!blogs || blogs.length === 0) { %>
-        <h1>No blog</h1>
-    <% } else { %>
-       
-        <% for (let i = 0; i < blogs.length; i++) { 
-            let blog = blogs[i]; %>
+<!-- BLOG CONTENT -->
+<div class="content">
+    <h1><%- data[0].title%></h1>
+    <h3><%- data[0].subTitle%></h3>
+    <p><%- data[0].description %></p>
 
-            <div class="card">
-                <h2><%- blog.title %></h2>
-                <h3><%- blog.subTitle %></h3>
-                <p><%- blog.description %></p>
-                <a href="/singlepage/<%- blog.id%>">Read More</a>
-            </div>
-
-        <% } %>
-    <% } %>
+    <a href="/" class="back">← Back to Home</a> 
+    <a href="/delete/<%-data[0].id %>">Delete</a>
+    <a href="/edit">Edit</a>
 </div>
 
 </body>

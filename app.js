@@ -1,5 +1,6 @@
 const express = require("express");
 const { blogs } = require("./model/index");
+const { where } = require("sequelize");
 const app = express()
 app.set("view engine","ejs")
 
@@ -34,6 +35,35 @@ await blogs.create({
 }
     
 )
+app.get("/singlepage/:id",async(req,res)=>{
+    const id=req.params.id
+    const data= await blogs.findAll({
+        where:{
+            id:id
+        }
+    })
+    res.render("singlepage",{data:data})
+})
+
+app.get('/edit/:id', (req, res) => {
+    // fetch blog by id
+    // render edit form
+});
+
+app.get('/delete/:id', async(req, res) => {
+    // delete blog from database
+    const id = req.params.id
+
+   await blogs.destroy({
+            where: {
+                id:id
+            }
+    })
+
+    res.redirect("/")
+});
+
+
 
 app.listen(3000,function(){
     console.log("server running 3000")
